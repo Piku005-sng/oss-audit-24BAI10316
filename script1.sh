@@ -1,18 +1,23 @@
 #!/bin/bash
 # Script 1: System Identity Report
-# Author: Priyanka Singh | Course: Open Source Software
+# Author: Priyanka Singh
+# This script displays basic system information
 
+# --- Store student details ---
 STUDENT_NAME="Priyanka Singh"
 SOFTWARE_CHOICE="Python"
 
-KERNEL=$(uname -r)
-USER_NAME=$(whoami)
-UPTIME=$(uptime -p)
-DATE_TIME=$(date)
-HOME_DIR=$HOME
+# --- Fetch system information ---
+KERNEL=$(uname -r)          # Get kernel version
+USER_NAME=$(whoami)         # Get current user
+UPTIME=$(uptime -p)         # Get system uptime
+DATE_TIME=$(date)           # Get current date and time
+HOME_DIR=$HOME              # Get home directory
 
+# Get Linux distribution name from os-release file
 DISTRO=$(cat /etc/os-release | grep PRETTY_NAME | cut -d= -f2 | tr -d '"')
 
+# --- Display output ---
 echo "========================================"
 echo " Open Source Audit — $STUDENT_NAME"
 echo "========================================"
